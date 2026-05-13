@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Lets Larp</string>
+    <string name="title_activity_main">Lets Larp</string>
+    <string name="package_name">com.yourname.letslarp</string>
+    <string name="custom_url_scheme">com.yourname.letslarp</string>
+</resources>
