@@ -1,20 +1,8 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# LetsLarp
+Have you ever been talking with your friends, and everyone is throwing references here and there while you're in the dark 🙄🫤? 
 
-# Run and deploy your AI Studio app
+LetsLarp helps you by quickly finding out what a slang or meme is referring to 😁. 
 
-This contains everything you need to run your app locally.
+https://lets-larp.vercel.app/
 
-View your app in AI Studio: https://ai.studio/apps/dcea46b1-c03d-46af-98e7-0adc9b5d2ae2
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Lets Larp :)
