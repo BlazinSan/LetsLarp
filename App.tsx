@@ -53,10 +53,8 @@ export default function App() {
       }
     };
 
-    // Run immediately
     loadVoices();
 
-    // Run again when voices load
     window.speechSynthesis.onvoiceschanged = () => {
       loadVoices();
     };
@@ -173,7 +171,7 @@ export default function App() {
             navigate('Result');
           }
 
-          setIsFetching(false); // ✅ success
+          setIsFetching(false); 
         } catch (error: any) {
           if (isMounted) {
             console.error("REAL LORE FETCH ERROR:", error);
@@ -189,7 +187,7 @@ export default function App() {
             navigate('Error');
           }
 
-          setIsFetching(false); // ✅ error
+          setIsFetching(false); 
         }
       };
 
@@ -299,7 +297,7 @@ export default function App() {
         </button>
 
         <p className="mt-4 text-center text-xs text-slate-400">
-          You can get a Gemini API key from Google AI Studio.
+          You can get a Gemini API key from Google AI Studio at https://aistudio.google.com/api-keys.
         </p>
       </div>
     </div>
