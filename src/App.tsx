@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/// <reference types="react" />
+
 import React, { useState, useEffect } from 'react';
 import html2canvas from "html2canvas";
 import { 
@@ -53,10 +55,8 @@ export default function App() {
       }
     };
 
-    // Run immediately
     loadVoices();
 
-    // Run again when voices load
     window.speechSynthesis.onvoiceschanged = () => {
       loadVoices();
     };
@@ -173,7 +173,7 @@ export default function App() {
             navigate('Result');
           }
 
-          setIsFetching(false); // ✅ success
+          setIsFetching(false); 
         } catch (error: any) {
           if (isMounted) {
             console.error("REAL LORE FETCH ERROR:", error);
@@ -189,7 +189,7 @@ export default function App() {
             navigate('Error');
           }
 
-          setIsFetching(false); // ✅ error
+          setIsFetching(false); 
         }
       };
 
@@ -298,9 +298,16 @@ export default function App() {
           Save API Key
         </button>
 
-        <p className="mt-4 text-center text-xs text-slate-400">
-          You can get a Gemini API key from Google AI Studio.
-        </p>
+        <div className="mt-5 text-center">
+          <a
+            href="https://aistudio.google.com/api-keys"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-xl border border-blue-400/40 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-300 underline-offset-4 transition hover:bg-blue-500/20 hover:text-blue-200 hover:underline"
+          >
+            Get Gemini API Key from Google AI Studio
+          </a>
+        </div>
       </div>
     </div>
         )}
@@ -766,7 +773,7 @@ function Processing({ navigate, isDark, onToggleDark }: { navigate: (s: Screen) 
           <motion.div 
             animate={{ rotate: -360 }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-4 rounded-full border-[2px] border-gray-50 dark:border-gray-900 border-b-primary/50 border-l-primary/20"
+            className="absolute inset-4 rounded-full border-2 border-gray-50 dark:border-gray-900 border-b-primary/50 border-l-primary/20"
           />
           <div className="relative z-10 flex flex-col items-center">
             <motion.div
@@ -1219,7 +1226,7 @@ function wrapText(
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {loreData.tags.map((t) => (
+                {loreData.tags.map((t: string) => (
                   <span key={t} className="px-2 py-0.5 rounded border border-gray-200 dark:border-gray-700 text-[10px] font-bold uppercase tracking-widest text-gray-400">
                     {t}
                   </span>
@@ -1234,7 +1241,7 @@ function wrapText(
               </div>
 
               <ul className="space-y-4">
-                {loreData.usage.map((u, i) => {
+                {loreData.usage.map((u: string, i: number) => {
                   const parts = u.split(':');
                   const label = parts[0];
                   const content = parts.slice(1).join(':').trim();
@@ -1261,7 +1268,7 @@ function wrapText(
                 }}
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
               <button
                 onClick={handlePlayVideo}
